@@ -14,9 +14,16 @@ public class RecursiveMethods {
 	public static double geometricSum(int n) {
 		
 			// FIXME compute the geometric sum for the first n terms recursively
-			return 0;
 		
-	}
+		if(n== 0) {
+			return 0;
+		}
+		else {
+			return Math.pow(0.5, n) + geometricSum(n-1);
+		}
+		}
+
+
 
 	/**
 	 * This method uses recursion to compute the greatest common divisor
@@ -41,10 +48,21 @@ public class RecursiveMethods {
 	 * @param array the array to create a reverse of, not to be mutated
 	 * @return an array with the same data as the input but it reverse order
 	 */
+	public static int [] indexHelper( int [] array, int i ) {
+		int [] revarray= new int [array.length]; 
+		if (i= array.length-1) {
+			return revarray
+		}
+		else {
+			revarra[i]= array[array.length- ]
+		}
+	}
+	
 	public static int[] toReversed(int[] array) {
 		
 			// FIXME create a helper method that can recursively reverse the given array
 			return new int[0];
+			if (array.length )
 		
 	}
 
@@ -59,6 +77,32 @@ public class RecursiveMethods {
 	 */
 	public static void circlesUponCircles(double xCenter, double yCenter, double radius,
 			double radiusMinimumDrawingThreshold) {
+		double bound = 5.0;
+		StdDraw.setXscale(-bound, bound);
+		StdDraw.setYscale(-bound, bound);
+		
+		
+		if( radius< radiusMinimumDrawingThreshold) {
+			
+		}
+		else {
+		StdDraw.circle(xCenter, yCenter, radius);
+		
+		circlesUponCircles(xCenter+radius, yCenter, radius/3.0,radiusMinimumDrawingThreshold );
+		circlesUponCircles(xCenter-radius, yCenter, radius/3.0, radiusMinimumDrawingThreshold);
+		circlesUponCircles(xCenter, yCenter+radius, radius/3.0,radiusMinimumDrawingThreshold );
+		circlesUponCircles(xCenter, yCenter-radius, radius/3.0, radiusMinimumDrawingThreshold);
+		
+		
+		
+		}
+		
+		
+		
+		
+		
+		
+		
 		
 		// FIXME
 	}
